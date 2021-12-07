@@ -1,0 +1,15 @@
+div {
+    background-color: rgb(145, 238, 245);
+    color: rgb(36, 35, 34);
+};
+body { background-color: coral };
+
+h1 {font-size: 25px; color:crimson };
+footer { background-color: darkblue; color: floralwhite;}
+
+
+.nav1 { font-size: 40px; color: rgb(233, 230, 60); text-align: right; padding: 20px; background-color: rgb(240, 176, 93);}
+.nav3 { font-size: 20px; color: rgb(86, 60, 233); text-align: right; padding: 10px; background-color: rgb(243, 174, 171);}
+
+.lprod { background-color: indianred;}
+.nav2 { background-color: rgb(104, 95, 240);}

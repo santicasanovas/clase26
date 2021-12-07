@@ -1,0 +1,56 @@
+<%- include('./partials/menu') %>
+
+<h1>Contacto</h1>
+
+<% if (typeof errors !='undefined') {%>
+<ul>
+<% errors.forEach((error) =>{ %>
+<li><%= error.msg %></li>
+<%}) %>
+</ul>
+<%} %>
+
+<div> <form action="/contacto" method="post" id=formsf  autocomplete="off">
+    <label for="Form1"><strong>Nombre de Cliente</strong> </label>
+    <input minlength="1" pattern="[A-Z a-z]+" type="text" name="Form1" id="Cliente" placeholder="ingrese Nombre" value="<%= values.Form1 %>">
+    <span></span>
+</div><br> <br><br><br>
+
+
+<div> 
+    <label for="dni">DNI</label>
+    <input minlength="7" pattern="[0-9]+" type="number" name="dni" id="dni" placeholder="ingrese nº DNI" value="<%= values.dni %>">
+    <label for="FNac">Fecha Nac</label>
+    <input type="date" name="FNac" id="FNac">
+    
+</div><br><br><br>
+
+<div> 
+    <label for="mail">MAIL</label>
+    <input   type="email" name="mail" id="mail" placeholder="ingrese MAIL" value="<%= values.mail %>">
+    <label for="contraseña">contraseña</label>
+    <input  pattern="[A-Z a-z0-9]+" type="password" name="contraseña" id="contraseña" placeholder="ingrese contraseña">
+    
+</div> <br><br><br>
+<div><label for="Provincia">Provincia</label><br>
+    <select name="Provincia" id="Provincia">
+        <option value="Seleccionar">Seleccionar</option>
+    <option value="CABA">Ciudad Autonoma de Buenos Aires</option>
+    <option value="BSAS">Buenos Aires</option>
+    <option value="CBA">Cordoba</option></select>
+</div> <br><br><br>
+<div>
+    <label for="RS">Queremos conocerte mejor por redes sociales</label>
+    <p>Que redes sociales usas</p><br>
+    <label for="RS">Facebook</label><input name="RS" type="checkbox">
+    <label for="RSI">Instagram</label><input name="RSI" type="checkbox">
+</div><br><br><br>
+<div><label for="mostrar">Queremos saber si ya nos conocias</label>
+    <label >SI</label><input type="radio" name="mostrar" value="1">
+    <label>NO</label><input type="radio" name="mostrar" value="0">
+</div><br><br><br>
+
+
+    <div><label for="mensaje">Mensaje</label></div><br>
+<textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea><br><br><br><button type="submit">Enviar</button>
+<button type="reset">Borrar</button></form><br><br><hr>

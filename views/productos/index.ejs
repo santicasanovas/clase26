@@ -1,0 +1,37 @@
+
+    <%- include('../partials/menu') %>
+    <div><h1>Listado de Productos</h1> 
+    <nav class="nav2">
+    <li> <a href="productos/crear">Crear Productos</a></li>
+   
+
+</nav> </div>
+    <div class="lprod">
+
+   <% productos.forEach( (producto) => {%> 
+    <h2> <a href="/productos/<%= producto.id %>"><%= producto.marca %> </a> </h2>
+    <h3> <a href="/productos/<%= producto.id %>"><%= producto.modelo %> </a> </h3>
+    <h4> <a href="/productos/<%= producto.id %>"><%= producto.id %> </a> </h4>
+    <a href="productos/<%= producto.id %>/editar">Editar Productos</a>
+    
+    <form class="form-borrar" action="productos/<%= producto.id %>/borrar?_method=DELETE" method="post">
+        <button type="submit">Borrar Producto</button>
+    </form>
+    <%}) %>
+
+<script>
+    const Bform= document.querySelectorAll('.form-borrar')
+
+    Bform.forEach( (form, index) => {
+        form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        if (confirm('¿Esta seguro que desea Borrar el producto')== true) {
+            event.target.submit()
+        }
+        alert('form:' + index)
+    })
+    
+    })    
+</script>
+
+   </div>

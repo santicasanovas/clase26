@@ -1,0 +1,24 @@
+<h1>Inicio de Sesión</h1>
+
+<% if (typeof errors !='undefined') {%>
+<ul>
+<% errors.forEach((error) =>{ %>
+<li><%= error.msg %></li>
+<%}) %>
+</ul>
+<%} %>
+
+<div> <form action="/login" method="post" >
+    <label for="email"><strong>Correo Electronico</strong> </label>
+    <input minlength="5"  type="email" name="email" id="email" placeholder="ingrese Email" required>
+    <span></span>
+</div><br> <br><br><br>
+
+
+<div> 
+    <label for="password">Conrtaseña</label>
+    <input minlength="7" type="password" name="password" id="password" placeholder="ingrese contraseña" >
+    
+</div><br><br><br>
+<button type="submit">Enviar</button>
+<button type="reset">Borrar</button></form><br><br><hr>
